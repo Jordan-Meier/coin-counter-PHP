@@ -4,15 +4,14 @@
     {
         function calculateChange($input_cents)
         {
-            $change_given = array();
-            $change_given['quarters'] = floor($input_cents/25);
-            $input_cents = $input_cents % 25;
-            $change_given['dimes'] = floor($input_cents/10);
-            $input_cents = $input_cents % 10;
-
-
-            return $change_given;
-
+            if ($input_cents >= 5) {
+                $output = array('pennies' => 0, 'nickels' => floor($input_cents/5));
+                $remainder = $input_cents % 5;
+                $output['pennies'] = $remainder;
+            } else {
+                $output = array('pennies' => $input_cents);
+            }
+            return $output;
         }
 
 

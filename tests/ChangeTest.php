@@ -5,41 +5,63 @@
     class ChangeTest extends PHPUnit_Framework_TestCase
     {
 
-        function test_calculateChange_quarters()
+        function test_calculatePennies()
         {
             //Arrange
             $test_Change = new Change;
-            $input = 80;
-            $input2 = 125;
+            $input = 1;
 
             //Act
             $result = $test_Change->calculateChange($input);
-            $result2 = $test_Change->calculateChange($input2);
 
             //Assert
             $this->assertEquals(
-                array('quarters' =>3),$result);
-            $this->assertEquals(
-                array('quarters' =>5),$result2);
+                array('pennies' => 1), $result);
         }
-        function test_calculateChange_dimes()
+
+        function test_calculateTwoPennies()
         {
             //Arrange
             $test_Change = new Change;
-            $input = 95;
-            $input2 = 125;
-            $input3 = 20;
+            $input = 2;
 
             //Act
             $result = $test_Change->calculateChange($input);
-            $result2 = $test_Change->calculateChange($input2);
-            $result2 = $test_Change->calculateChange($input3);
 
             //Assert
-            $this->assertEquals(array('quarters' => 3, 'dimes' =>2), $result);
-            $this->assertEquals(array('quarters' => 5, 'dimes' =>0), $result2);
-            $this->assertEquals(array('quarters' => 0, 'dimes' =>2), $result3);
+            $this->assertEquals(
+                array('pennies' => 2), $result);
         }
+
+        function test_calculateOneNickel()
+        {
+            //Arrange
+            $test_Change = new Change;
+            $input = 5;
+
+            //Act
+            $result = $test_Change->calculateChange($input);
+
+            //Assert
+            $this->assertEquals(
+                array('pennies' => 0, 'nickels' => 1), $result);
+        }
+        function test_calculateOneNickelOnePenny()
+        {
+            //Arrange
+            $test_Change = new Change;
+            $input = 8;
+
+            //Act
+            $result = $test_Change->calculateChange($input);
+
+            //Assert
+            $this->assertEquals(
+                array('pennies' => 3, 'nickels' => 1), $result);
+        }
+
+
+
 
 
 
