@@ -85,6 +85,32 @@
             $this->assertEquals(
                 array('pennies' => 3, 'nickels' => 1, 'dimes' => 1), $result);
         }
+        function test_calculateOneQuarter()
+        {
+            //Arrange
+            $test_Change = new Change;
+            $input = 25;
+
+            //Act
+            $result = $test_Change->calculateChange($input);
+
+            //Assert
+            $this->assertEquals(
+                array('pennies' => 0, 'nickels' => 0, 'dimes' => 0, 'quarters' => 1), $result);
+        }
+        function test_calculateOneQuarterOneDimeOneNickelFourPennies()
+        {
+            //Arrange
+            $test_Change = new Change;
+            $input = 44;
+
+            //Act
+            $result = $test_Change->calculateChange($input);
+
+            //Assert
+            $this->assertEquals(
+                array('pennies' => 4, 'nickels' => 1, 'dimes' => 1, 'quarters' => 1), $result);
+        }
 
 
 
