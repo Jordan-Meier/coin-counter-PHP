@@ -46,7 +46,7 @@
             $this->assertEquals(
                 array('pennies' => 0, 'nickels' => 1), $result);
         }
-        function test_calculateOneNickelOnePenny()
+        function test_calculateOneNickelThreePennies()
         {
             //Arrange
             $test_Change = new Change;
@@ -58,6 +58,32 @@
             //Assert
             $this->assertEquals(
                 array('pennies' => 3, 'nickels' => 1), $result);
+        }
+        function test_calculateOneDime()
+        {
+            //Arrange
+            $test_Change = new Change;
+            $input = 10;
+
+            //Act
+            $result = $test_Change->calculateChange($input);
+
+            //Assert
+            $this->assertEquals(
+                array('pennies' => 0, 'nickels' => 0, 'dimes' => 1), $result);
+        }
+        function test_calculateOneDimeOneNickelThreePennies()
+        {
+            //Arrange
+            $test_Change = new Change;
+            $input = 18;
+
+            //Act
+            $result = $test_Change->calculateChange($input);
+
+            //Assert
+            $this->assertEquals(
+                array('pennies' => 3, 'nickels' => 1, 'dimes' => 1), $result);
         }
 
 
