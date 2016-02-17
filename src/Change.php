@@ -28,6 +28,34 @@
             return $output;
         }
 
+        //
+        // public $result = array('quarters'=>0, 'dimes'=>0, 'nickels'=>0, 'pennies'=>0);
+        //
+        // function calculateChange($amount)
+        // {
+        //
+        //     if ($amount == 0) {
+        //         var_dump($this->result);
+        //         return $this->result;
+        //     }
+        //         elseif ($amount >= 25) {
+        //             $this->result['quarters'] += 1;
+        //             $this->calculateChange($amount -= 25);
+        //         }
+        //             elseif ($amount >= 10) {
+        //                 $this->result['dimes'] += 1;
+        //                 $this->calculateChange($amount -= 10);
+        //             }
+        //                 elseif ($amount >= 5) {
+        //                     $this->result['nickels'] += 1;
+        //                     $this->calculateChange($amount -= 5);
+        //                 }
+        //                     elseif ($amount >0) {
+        //
+        //                         $this->result['pennies'] += 1;
+        //                         $this->calculateChange($amount -= 1);
+        //                     }
+        // }
 
     }
 
