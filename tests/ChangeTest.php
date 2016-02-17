@@ -12,12 +12,11 @@
             $input = 1;
 
             //Act
-            $output = $test_Change->calculateChange($input);
-            var_dump($output);
+            $result = $test_Change->calculateChange($input);
+            var_dump($result);
 
             //Assert
-            $this->assertEquals(
-                array('pennies'=>1), $output);
+            $this->assertEquals(array('pennies'=>1), $result);
         }
 
         function test_calculateTwoPennies()

@@ -28,15 +28,20 @@
             return $output;
         }
 
+
+        // private $result = array('quarters'=>0, 'dimes'=>0, 'nickels'=>0, 'pennies'=>0);
         //
-        // public $result = array('quarters'=>0, 'dimes'=>0, 'nickels'=>0, 'pennies'=>0);
+        // function getResult()
+        // {
+        //     return $this->result;
+        // }
         //
         // function calculateChange($amount)
         // {
         //
         //     if ($amount == 0) {
         //         var_dump($this->result);
-        //         return $this->result;
+        //         return $this->getResult();
         //     }
         //         elseif ($amount >= 25) {
         //             $this->result['quarters'] += 1;
@@ -51,7 +56,6 @@
         //                     $this->calculateChange($amount -= 5);
         //                 }
         //                     elseif ($amount >0) {
-        //
         //                         $this->result['pennies'] += 1;
         //                         $this->calculateChange($amount -= 1);
         //                     }

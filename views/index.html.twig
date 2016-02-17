@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+        <title>Change Counter</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Calculate change</h1>
+            <form action="/calculate_change">
+                <div class="form-group">
+                    <label for="amount">Enter amount in cents</label>
+                    <input type="number" id="amount" name="amount" class='form-control'><br>
+                    <button class="btn btn-success" type="submit">Calculate Change!</button>
+                </div>
+            </form>
+            <div class="well">
+                <p>
+                    Your change is:
+                    <ul>
+                        {% for key, result in results %}
+                            <li>{{ key }}: {{ result }}</li>
+                        {% endfor %}
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
