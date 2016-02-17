@@ -16,7 +16,7 @@
             var_dump($result);
 
             //Assert
-            $this->assertEquals(array('pennies'=>1), $result);
+            $this->assertEquals(array('pennies' => 1, 'nickels' => 0, 'dimes' => 0, 'quarters' => 0), $result);
         }
 
         function test_calculateTwoPennies()
@@ -30,7 +30,7 @@
 
             //Assert
             $this->assertEquals(
-                array('pennies' => 2), $result);
+                array('pennies' => 2, 'nickels' => 0, 'dimes' => 0, 'quarters' => 0), $result);
         }
 
         function test_calculateOneNickel()
@@ -44,7 +44,7 @@
 
             //Assert
             $this->assertEquals(
-                array('pennies' => 0, 'nickels' => 1), $result);
+                array('pennies' => 0, 'nickels' => 1, 'dimes' => 0, 'quarters' => 0), $result);
         }
         function test_calculateOneNickelThreePennies()
         {
@@ -57,7 +57,7 @@
 
             //Assert
             $this->assertEquals(
-                array('pennies' => 3, 'nickels' => 1), $result);
+                array('pennies' => 3, 'nickels' => 1, 'dimes' => 0, 'quarters' => 0), $result);
         }
         function test_calculateOneDime()
         {
@@ -70,7 +70,7 @@
 
             //Assert
             $this->assertEquals(
-                array('pennies' => 0, 'nickels' => 0, 'dimes' => 1), $result);
+                array('pennies' => 0, 'nickels' => 0, 'dimes' => 1, 'quarters' => 0), $result);
         }
         function test_calculateOneDimeOneNickelThreePennies()
         {
@@ -83,7 +83,7 @@
 
             //Assert
             $this->assertEquals(
-                array('pennies' => 3, 'nickels' => 1, 'dimes' => 1), $result);
+                array('pennies' => 3, 'nickels' => 1, 'dimes' => 1, 'quarters' => 0), $result);
         }
         function test_calculateOneQuarter()
         {
